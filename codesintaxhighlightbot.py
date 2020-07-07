@@ -51,7 +51,7 @@ def formatCmd(update, context):
         
         code = msg.replace('/format@CodeSintaxHighLightBot '+lang+'\n', '')
 
-        lexer = get_lexer_by_name("python", stripall=False)
+        lexer = get_lexer_by_name(lang, stripall=False)
         formatter = HtmlFormatter(linenos=True)
 
         html = highlight(code, lexer, formatter)
