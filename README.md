@@ -1,6 +1,6 @@
 # CodeSintaxHightLigth
 
-@CodeSintaxHightLight helps you to format messages with programing language code
+**@CodeSintaxHightLight** helps you to format messages with programing language code
 
 ## Requirements
 
