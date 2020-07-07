@@ -20,7 +20,7 @@ langs = ['php','python']
 
 def helpCmd(update, context):
     text = """
-*@CodeSintaxHightLight helps you to format messages with programing language code*
+*@CodeSintaxHightLight helps you to format messages with programming language code*
 *Usage*
 /format python
 numbers = \[1,2.3,4,5,6\]
