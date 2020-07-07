@@ -23,7 +23,7 @@ def helpCmd(update, context):
 *@CodeSintaxHightLight helps you to format messages with programming language code*
 *Usage*
 /format python
-numbers = \[1,2.3,4,5,6\]
+numbers = \[1,2,3,4,5,6]
 for number in numbers:
     print(number)
 """
