@@ -1,30 +1,30 @@
-#CodeSintaxHightLigth
+# CodeSintaxHightLigth
 
 @CodeSintaxHightLight helps you to format messages with programing language code
 
-##Requirements
+## Requirements
 
 You need to have python installed in your system
 
 (https://www.python.org/downloads/) https://www.python.org/downloads/
 
-###Install required libraries
+### Install required libraries
 
 `pip install python-telegram-bot`
 `pip install Pygments`
 `pip install requests`
 
-##Run
+## Run
 
 `python codesintaxhighlightbot.py`
 
-##Commands
+## Commands
 
 - **/help** Show bot help
 - **/langs** Show supported langs
 - **/format** Format the code
 
-##Format command usage
+## Format command usage
 
 For usage /format command use the below sintax
 
