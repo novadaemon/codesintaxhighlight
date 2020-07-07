@@ -26,7 +26,7 @@ You need to have python installed in your system
 
 ## Format command usage
 
-For usage /format command use the below sintax
+For usage `/format` command use the below sintax
 
 ```
 /format python

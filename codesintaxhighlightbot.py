@@ -49,7 +49,7 @@ def formatCmd(update, context):
             context.bot.send_message(chat_id=update.effective_chat.id, text="The format is not supported!") 
             return   
         
-        code = msg.replace('/format@CodeSintaxHightLigth '+lang+'\n', '')
+        code = msg.replace('/format@CodeSintaxHighLightBot '+lang+'\n', '')
 
         lexer = get_lexer_by_name("python", stripall=False)
         formatter = HtmlFormatter(linenos=True)
