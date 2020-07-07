@@ -10,9 +10,7 @@ You need to have python installed in your system
 
 ### Install required libraries
 
-`pip install python-telegram-bot`
-`pip install Pygments`
-`pip install requests`
+`pip install python-telegram-bot Pygments requests`
 
 ## Run
 
