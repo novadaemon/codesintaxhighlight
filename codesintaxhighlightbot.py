@@ -20,12 +20,14 @@ langs = ['php','python', 'html']
 
 def helpCmd(update, context):
     text = """
-*@CodeSintaxHightLight helps you to format messages with programming language code*
-*Usage*
+*@CodeSintaxHightLight helps you to format messages with programming language code.*
+*Usage:*
+```
 /format python
 numbers = \[1,2,3,4,5,6]
 for number in numbers:
     print(number)
+```    
 """
 
     context.bot.send_message(chat_id=update.effective_chat.id, parse_mode='Markdown', text=text)
