@@ -18,6 +18,18 @@ dispatcher = updater.dispatcher
 
 langs = ['php','python']
 
+def helpCmd(update, context):
+    text = """
+*@CodeSintaxHightLight helps you to format messages with programing language code*
+*Usage*
+/format python
+numbers = \[1,2.3,4,5,6\]
+for number in number:
+    print(number)
+"""
+
+    context.bot.send_message(chat_id=update.effective_chat.id, parse_mode='Markdown', text=text)
+
 def langsCmd(update, context):
     text = ''
     for i in range(len(langs)):
@@ -60,9 +72,11 @@ def formatCmd(update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text="An error has ocurred parsing the message")
 
 
+help_handler = CommandHandler('help', helpCmd)
 langs_handler = CommandHandler('langs', langsCmd)
 format_handler = CommandHandler('format', formatCmd)
 
+dispatcher.add_handler(help_handler)
 dispatcher.add_handler(langs_handler)
 dispatcher.add_handler(format_handler)
 
