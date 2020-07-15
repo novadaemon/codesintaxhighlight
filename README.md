@@ -18,7 +18,7 @@ You need to have python installed in your system
 
 ## Commands
 
-- **/help** Show bot help
+- **/help** Show bot's help
 - **/langs** Show supported langs
 - **/format** Format the code
 
