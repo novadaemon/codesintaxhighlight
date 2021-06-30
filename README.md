@@ -1,4 +1,4 @@
-# CodeSintaxHightLigth
+# @CodeSintaxHightLigth
 
 **@CodeSintaxHightLight** helps you to format messages with programming language code
 
@@ -27,7 +27,7 @@ You need to have python installed in your system
 For usage `/format` command use the below sintax
 
 ```python
-/format python
+/format@CodeSintaxHightLight python
 
 def function hello():
 	print('hello')
