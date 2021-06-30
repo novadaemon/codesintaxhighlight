@@ -26,11 +26,13 @@ You need to have python installed in your system
 
 For usage `/format` command use the below sintax
 
-```
+```python
 /format python
 
-numbers = [1,2,3,4,5,6]
-
-for number in numbers:
-	print(number)
+def function hello():
+	print('hello')
 ```
+
+## Sreenshot
+
+![screenshot](screenshot.png)
