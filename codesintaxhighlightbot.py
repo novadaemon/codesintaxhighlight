@@ -23,7 +23,7 @@ def helpCmd(update, context):
 *@CodeSintaxHightLight helps you to format messages with programming language code.*
 *Usage:*
 ```
-/format@CodeSintaxHightLight python
+/format python
 numbers = [1,2,3,4,5,6]
 for number in numbers:
     print(number)
@@ -52,6 +52,7 @@ def formatCmd(update, context):
             return   
         
         code = msg.replace('/format@CodeSintaxHighLightBot '+lang+'\n', '')
+        code = msg.replace('/format '+lang+'\n', '')
 
         lexer = get_lexer_by_name(lang, stripall=False)
         formatter = HtmlFormatter(linenos=True)

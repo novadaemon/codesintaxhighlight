@@ -6,7 +6,7 @@
 
 You need to have python installed in your system
 
-(https://www.python.org/downloads/) https://www.python.org/downloads/
+https://www.python.org/downloads/
 
 ### Install required libraries
 
@@ -27,12 +27,12 @@ You need to have python installed in your system
 For usage `/format` command use the below sintax
 
 ```python
-/format@CodeSintaxHightLight python
+/format python
 
 def function hello():
-	print('hello')
+    print('hello')
 ```
 
-## Sreenshot
+## Screenshot
 
 ![screenshot](screenshot.png)
