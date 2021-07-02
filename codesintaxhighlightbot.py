@@ -3,14 +3,14 @@ from telegram.ext import CommandHandler
 from pygments import highlight
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
+from decouple import config
 import re
 import requests
 
-TOKEN = "1386943447:AAGb6qFs8gOB0m_TIWzcJaEGWOAWIhTjnRg"
 
-HCTI_API_ENDPOINT = "https://hcti.io/v1/image"
-HCTI_API_USER_ID = '32291e70-0d8f-47b1-915e-f14f9bc380d2'
-HCTI_API_KEY = '046bc5c2-62a3-419a-873c-e3994ff54fae'
+TOKEN = config('TOKEN')
+HCTI_API_USER_ID = config('HCTI_API_USER_ID')
+HCTI_API_KEY = config('HCTI_API_KEY')
 
 updater = Updater(token=TOKEN, use_context=True)
 
@@ -29,7 +29,6 @@ for number in numbers:
     print(number)
 ```    
 """
-
     context.bot.send_message(chat_id=update.effective_chat.id, parse_mode='Markdown', text=text)
 
 def langsCmd(update, context):
@@ -65,7 +64,7 @@ def formatCmd(update, context):
             'css':css 
         }
 
-        image = requests.post(url = HCTI_API_ENDPOINT, data = data, auth=(HCTI_API_USER_ID, HCTI_API_KEY))
+        image = requests.post(url = "https://hcti.io/v1/image", data = data, auth=(HCTI_API_USER_ID, HCTI_API_KEY))
 
         url = image.json()['url']
 
