@@ -1,6 +1,6 @@
-# @CodeSintaxHightLigth
+# @CodeSintaxHighLigthBot
 
-**@CodeSintaxHightLight** helps you to format messages with programming language code
+**@CodeSintaxHighLightBot** helps you to format messages with programming language code
 
 ## Requirements
 
@@ -24,7 +24,7 @@ HCTI_API_USER_ID='32291e70-0d8f-47b1-915e-f14f9bc370f34'
 HCTI_API_KEY='046bc5c2-62a3-419a-873c-e3994ff54adfr'
 ```
 
-**@CodeSintaxHightLight** use https://hcti.io/ API to generate an image with formatted message
+**@CodeSintaxHighLightBot** use https://hcti.io/ API to generate an image with formatted message
 
 ## Run
 
@@ -47,8 +47,8 @@ def function hello():
     print('hello')
 ```
 
-
-
+## Talk to bot
+https://telegram.me/CodeSintaxHighLightBot
 ## Screenshot
 
 ![screenshot](screenshot.png)
