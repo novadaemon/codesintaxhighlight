@@ -12,6 +12,20 @@ https://www.python.org/downloads/
 
 `pip install-r requirements.txt`
 
+### Set configuration variables
+
+Create a file named `.env` in project directory root
+
+Add the below variables:
+
+```
+TOKEN='YourTelegramBotToken'
+HCTI_API_USER_ID='32291e70-0d8f-47b1-915e-f14f9bc370f34'
+HCTI_API_KEY='046bc5c2-62a3-419a-873c-e3994ff54adfr'
+```
+
+**@CodeSintaxHightLight** use https://hcti.io/ API to generate an image with formatted message
+
 ## Run
 
 `python codesintaxhighlightbot.py`
@@ -32,6 +46,8 @@ For usage `/format` command use the below sintax
 def function hello():
     print('hello')
 ```
+
+
 
 ## Screenshot
 
