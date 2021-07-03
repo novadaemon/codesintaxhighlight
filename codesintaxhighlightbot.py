@@ -16,7 +16,7 @@ updater = Updater(token=TOKEN, use_context=True)
 
 dispatcher = updater.dispatcher
 
-langs = ['php','python', 'html']
+langs = ['php','python', 'html', 'css']
 
 def helpCmd(update, context):
     text = """
