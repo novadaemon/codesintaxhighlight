@@ -10,7 +10,7 @@ https://www.python.org/downloads/
 
 ### Install required libraries
 
-`pip install-r requirements.txt`
+`pip install -r requirements.txt`
 
 ### Set configuration variables
 
@@ -20,8 +20,8 @@ Add the below variables:
 
 ```
 TOKEN='YourTelegramBotToken'
-HCTI_API_USER_ID='32291e70-0d8f-47b1-915e-f14f9bc370f34'
-HCTI_API_KEY='046bc5c2-62a3-419a-873c-e3994ff54adfr'
+HCTI_API_USER_ID='YourHCTIAPIUserID'
+HCTI_API_KEY='YourHCTIAPIKey'
 ```
 
 **@CodeSintaxHighLightBot** use https://hcti.io/ API to generate an image with formatted message
