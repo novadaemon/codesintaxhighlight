@@ -1,5 +1,5 @@
-from telegram.ext import Updater
-from telegram.ext import CommandHandler
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from pygments import highlight
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
@@ -12,13 +12,12 @@ TOKEN = config('TOKEN')
 HCTI_API_USER_ID = config('HCTI_API_USER_ID')
 HCTI_API_KEY = config('HCTI_API_KEY')
 
-updater = Updater(token=TOKEN, use_context=True)
-
-dispatcher = updater.dispatcher
+app = ApplicationBuilder().token(TOKEN).build()
 
 langs = ['php','python', 'html', 'css']
 
-def helpCmd(update, context):
+
+async def helpCmd(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     text = """
 *@CodeSintaxHightLight helps you to format messages with programming language code.*
 *Usage:*
@@ -27,27 +26,27 @@ def helpCmd(update, context):
 numbers = [1,2,3,4,5,6]
 for number in numbers:
     print(number)
-```    
+```
 """
-    context.bot.send_message(chat_id=update.effective_chat.id, parse_mode='Markdown', text=text)
+    await update.message.reply_text(text, parse_mode='Markdown')
 
-def langsCmd(update, context):
+async def langsCmd(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     text = ''
     for i in range(len(langs)):
         text += '<b>'+str(i+1)+'.</b> '+langs[i] +'\r\n'
 
-    context.bot.send_message(chat_id=update.effective_chat.id, parse_mode='HTML', text=text)
+    await update.message.reply_text(text, parse_mode='HTML')
 
-def formatCmd(update, context):
+async def formatCmd(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     try:
         msg = update['message']['text']
 
-        m = re.search('\s.+\\n', msg)
+        m = re.search('\\s.+\\n', msg)
 
         lang = m.group(0).strip()
 
         if(lang not in langs):
-            context.bot.send_message(chat_id=update.effective_chat.id, text="The format is not supported!") 
+            await update.message.reply_text("The format is not supported!")
             return   
         
         code = msg.replace('/format@CodeSintaxHighLightBot '+lang+'\n', '')
@@ -68,19 +67,15 @@ def formatCmd(update, context):
 
         url = image.json()['url']
 
-        context.bot.send_message(chat_id=update.effective_chat.id, text=url)
-
+        await update.message.reply_text(url)
     except:
-        context.bot.send_message(chat_id=update.effective_chat.id, text="An error has ocurred parsing the message")
+        await update.message.reply_text("An error has ocurred parsing the message")
+
+app = ApplicationBuilder().token(TOKEN).build()        
+
+app.add_handler(CommandHandler("help", helpCmd))
+app.add_handler(CommandHandler("langs", langsCmd))
+app.add_handler(CommandHandler("format", formatCmd))
 
 
-help_handler = CommandHandler('help', helpCmd)
-langs_handler = CommandHandler('langs', langsCmd)
-format_handler = CommandHandler('format', formatCmd)
-
-dispatcher.add_handler(help_handler)
-dispatcher.add_handler(langs_handler)
-dispatcher.add_handler(format_handler)
-
-
-updater.start_polling()
+app.run_polling()
